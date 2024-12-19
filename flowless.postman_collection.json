@@ -1,0 +1,558 @@
+{
+	"info": {
+		"_postman_id": "b8f1c893-bd05-4fe1-b277-779bbba22f8d",
+		"name": "flowless",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31797392"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\": \"Marinka\", \r\n\"password\":\"paSSwordik\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/login",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Марина\",\r\n\"last_name\": \"Иавнченко\",\r\n\"username\": \"Marinka\", \r\n\"email\":\"Marinka@mail.ru\",\r\n\"phone\": \"+79001456321\",\r\n\"password\":\"paSSwordik\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/register",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/users",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "fmI7iqIlz0q-d_5YD6xwjGNELsvV5xIq",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"phone\": \"+79001123321\", \r\n\"email\":\"Marinkanew@mail.ru\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/change",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new_painting",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Картина \"У окна\"",
+							"type": "text"
+						},
+						{
+							"key": "type_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "На портрете изображена супруга покупателя картин импрессионистов Виктора Шоке, занимавшего пост таможенного чиновника. Мадам Шоке изображена в квартире на улице Риволи в Париже на фоне большого французского окна, из которого открывается вид в сад Тюильри.",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "postman-cloud:///1efbbfd4-d683-4650-b0b3-880b97a11abe"
+						},
+						{
+							"key": "price",
+							"value": "12999",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/painting/addnew",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"painting",
+						"addnew"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viewpainting",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/painting",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"painting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchpainting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/painting/search?type=Пе",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"painting",
+						"search"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Пе"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editpainting",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type_id\":4\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/painting/edit?id_painting=6",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"painting",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "id_painting",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cartitems",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/cart/items",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cartnew",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paint_id\":6,\r\n    \"count\":2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/cart/new",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cartedit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"count\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/cart/items?id_cart=1",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart",
+						"items"
+					],
+					"query": [
+						{
+							"key": "id_cart",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletecart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/cart/del?id_cart=2",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"cart",
+						"del"
+					],
+					"query": [
+						{
+							"key": "id_cart",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ordernew",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"phone\": \"+75584343523\",\r\n\"address\": \"Непокоренных 36\",\r\n\"payment\":\"банковской картой\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/order/new",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"order",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "imnRe7AUc_u_Hl--WqH0S8YXENYdtHOP",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-grechushnikova.сделай.site/api/orders",
+					"protocol": "https",
+					"host": [
+						"k-grechushnikova",
+						"сделай",
+						"site"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
